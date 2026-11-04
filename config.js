@@ -11,11 +11,14 @@ window.AWPL_CONFIG = {
   /* People shown in the "Submitted by" list. Add or remove names here. */
   EMPLOYEES: [
     "Dr. Anujkumar Ghorpade",
-    "Yogesh Ghatge",
+    "Achyut Mophare",
     "Shivendra Singh",
     "Umesh Mane",
     "Avinash Ghodke",
     "Sanyojak Kamble",
-    "Omprakash Ade"
+    "Omprakash Ade",
+    "Abhishek Mohate",
+    "Aditya Mandavkar",
+    "Shweta Katkar"
   ]
 };
