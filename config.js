@@ -6,7 +6,7 @@ window.AWPL_CONFIG = {
 
   /* Your deployed Apps Script Web App URL. Must end in /exec
      (not the editor URL). Keep the quotes. */
-  API_URL: "PASTE_YOUR_NEW_APPS_SCRIPT_WEB_APP_URL_HERE",
+  API_URL: "https://script.google.com/macros/s/AKfycbzm84Tavi6B1Z1KkSlWo6ZV_82kV09HEXf0_tsU9siGDTOVcJdvtrnk4Bo6I8mIkIfEJA/exec",
 
   /* People shown in the "Submitted by" list. Add or remove names here. */
   EMPLOYEES: [
