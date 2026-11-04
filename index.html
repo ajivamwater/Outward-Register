@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="AWPL outward number register">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="AWPL Outward">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>AWPL Outward Register</title>
+</head>
+<body>
+
+  <header class="top">
+    <img class="top-logo" src="./logo-wordmark.png" alt="Ajivam Water" width="720" height="218">
+    <div class="top-title">Outward register</div>
+  </header>
+
+  <div id="offline" class="offline" role="status" hidden>
+    You are offline. Numbers can only be issued when you are connected.
+  </div>
+
+  <main class="wrap">
+
+    <!-- ENTRY FORM -->
+    <section id="formView" class="sheet" aria-labelledby="formTitle">
+      <h1 id="formTitle">New outward entry</h1>
+      <p class="lede">Fill in the letter details. The official number is issued when you submit.</p>
+
+      <form id="entryForm" novalidate>
+
+        <label for="date">Letter date</label>
+        <input id="date" name="date" type="date" required aria-describedby="err-date">
+        <p class="err" id="err-date" hidden></p>
+
+        <label for="officerOffice">Name and address (officer / office)</label>
+        <textarea id="officerOffice" name="officerOffice" rows="3" maxlength="400" required
+          placeholder="e.g. Executive Engineer, Maharashtra Jeevan Pradhikaran, Pune"
+          aria-describedby="err-officerOffice"></textarea>
+        <p class="err" id="err-officerOffice" hidden></p>
+
+        <label for="place">Place</label>
+        <input id="place" name="place" type="text" maxlength="100" required
+          placeholder="e.g. Pune" autocomplete="off" aria-describedby="err-place">
+        <p class="err" id="err-place" hidden></p>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="3" maxlength="600" required
+          placeholder="e.g. Submission of proposal" aria-describedby="err-description"></textarea>
+        <p class="err" id="err-description" hidden></p>
+
+        <label for="submittedBy">Submitted by</label>
+        <select id="submittedBy" name="submittedBy" required aria-describedby="err-submittedBy">
+          <option value="">Select your name</option>
+        </select>
+        <p class="err" id="err-submittedBy" hidden></p>
+
+        <label for="remarks">Remarks <span class="opt">(optional)</span></label>
+        <textarea id="remarks" name="remarks" rows="2" maxlength="400"></textarea>
+
+        <div id="banner" class="banner" role="alert" hidden></div>
+
+        <button id="getBtn" class="btn primary" type="submit">Get outward number</button>
+      </form>
+    </section>
+
+    <!-- RESULT -->
+    <section id="resultView" class="sheet" aria-labelledby="resultTitle" hidden>
+      <h1 id="resultTitle" tabindex="-1">Number issued</h1>
+
+      <div class="stamp" id="stamp">
+        <p class="stamp-label">Outward number</p>
+        <p class="stamp-no" id="outwardNo"></p>
+        <p class="stamp-meta" id="issuedAt"></p>
+      </div>
+
+      <p class="summary" id="summary"></p>
+
+      <div class="actions">
+        <button id="copyBtn" class="btn primary" type="button">Copy number</button>
+        <button id="shareBtn" class="btn secondary" type="button" hidden>Share details</button>
+        <button id="newBtn" class="btn secondary" type="button">New entry</button>
+      </div>
+    </section>
+
+    <!-- RECENT ON THIS PHONE -->
+    <section id="recentWrap" class="recent" aria-labelledby="recentTitle" hidden>
+      <h2 id="recentTitle">Issued from this phone</h2>
+      <p class="hint">Tap a number to copy it. This list is kept on this phone only; the full register is in the Sheet.</p>
+      <ul id="recent"></ul>
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
